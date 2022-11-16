@@ -5,7 +5,8 @@ import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 import { Container } from './Container';
 
 const HeaderEl = styled.header`
-  padding: 1.5rem 0;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
   box-shadow: var(--shadow);
   background-color: var(--colors-ui-elem);
 `;
