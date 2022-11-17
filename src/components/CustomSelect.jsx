@@ -5,8 +5,7 @@ import { IoChevronDown } from 'react-icons/io5';
 import CustomOption from './CustomOption';
 
 const SelectWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  position: relative;
   width: 180px;
   box-shadow: var(--shadow);
   border-radius: var(--bradius);
@@ -20,7 +19,6 @@ const SelectEl = styled.div`
   height: 50px;
   padding: 0 15px;
   width: 100%;
-  font-size: 16px;
   letter-spacing: 0.1px;
   display flex;
   align-items: center;
@@ -38,7 +36,11 @@ const SelectEl = styled.div`
     opacity: 0.3;
   }
 `;
-const Options = styled.div``;
+const Options = styled.div`
+  position: absolute;
+  bottom: -180px;
+  width: 100%;
+`;
 
 const optionItems = [
   {value: 'All', label: 'All'},
@@ -49,9 +51,8 @@ const optionItems = [
   {value: 'Oceania', label: 'Oceania'}
 ]
 
-export default function CustomSelect() {
-  const [selectValue, setSelectValue] = useState('All');
-  const [showOptions, setShowOptions] = useState(true);
+export default function CustomSelect({ selectValue ,setSelectValue }) {
+  const [showOptions, setShowOptions] = useState(false);
 
   function handleSelectValue(value) {
     setSelectValue(value);

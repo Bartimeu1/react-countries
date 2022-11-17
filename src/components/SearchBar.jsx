@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { IoSearch } from 'react-icons/io5';
 
@@ -23,18 +23,13 @@ const Input = styled.input.attrs({
   outline: none;
 `; 
 
-export default function SearchBar() {
-  const [inputValue, setInputValue] = useState('');
-
-  function handleInput(text) {
-    setInputValue(text);
-  }
-  
+export default function SearchBar({inputValue, setInputValue}) {
   return (
     <Label>
       <IoSearch/>
       <Input 
-        onChange={(e) => handleInput(e.target.value)}
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
       ></Input>
     </Label>
   )

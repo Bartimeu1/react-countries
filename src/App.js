@@ -1,12 +1,23 @@
+import React, { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
-import Controls from "./components/Controls";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header></Header>
-      <Controls></Controls>
-    </div>
+      <Routes>
+
+       <Route 
+          exact 
+          path='/' 
+          element={<MainPage></MainPage>}
+        ></Route>
+        
+      </Routes>
+    </>
   );
 }
 

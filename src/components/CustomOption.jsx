@@ -7,7 +7,7 @@ const OptionEl = styled.div`
   height: 30px;
   padding-left: 15px;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.1px;
   display: flex;
   align-items: center;
