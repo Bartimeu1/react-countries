@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 
@@ -16,8 +17,8 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
-const Title = styled.a.attrs({
-  href: '/',
+const Title = styled(Link).attrs({
+  to: '/',
 })`
   font-weight: var(--fw-bold);
   font-size: var(--fs-md);
@@ -50,9 +51,9 @@ export default function Header() {
         <Wrapper>
           <Title>Where in the world?</Title>
           <ModeSwitcher onClick={() => toogleTheme()}>
-            {currentTheme === 'light' ? <IoMoon/> : <IoMoonOutline/>}
+            {currentTheme === 'light' ? <IoMoonOutline/> : <IoMoon/>}
             <ModeText>
-              {currentTheme === 'light' ? 'Dark mode' : 'Light mode'}
+              {currentTheme === 'light' ? 'Light mode' : 'Dark mode'}
             </ModeText>
           </ModeSwitcher>
         </Wrapper>

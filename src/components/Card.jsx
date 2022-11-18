@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -40,9 +41,10 @@ const CardListItem = styled.li`
 `;
 
 export default function Card(props) {
+  const navigate = useNavigate();
   const { name, population, capital, img, region } = props;
   return (
-    <Wrapper>
+    <Wrapper onClick={() => navigate(`/country/${name}`)}>
       <CardEl>
         <CardImg src={img}></CardImg>
         <CardInfo>
